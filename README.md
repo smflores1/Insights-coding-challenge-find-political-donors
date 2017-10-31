@@ -37,16 +37,6 @@ Create the following file tree structure inside a directory with any name, label
     └── src
         └── find_political_donors.py
         
-### Input Data
-
-The script find_political_donors.py accepts as input a text file generically titled "itcont.txt" via sys.argv. The input file itcont.txt can be any file found at http://classic.fec.gov/finance/disclosure/ftpdet.shtml#a2017_2018 under "Contributions from Individuals" and pertaining to political campaign contributions between the years 2010 -- 2018. (Use any file beginning with the prefix "itcont" and ending with ".txt".) It is a text file where each line has 21 pipe-delimited fields, described at http://classic.fec.gov/finance/disclosure/metadata/DataDictionaryContributionsbyIndividuals.shtml.
-
-An very small example of the itcont.txt file may be downloaded at https://github.com/InsightDataScience/find-political-donors too.
-
-### Output Data
-
-The script find_political_donors.py ouputs two text files, respectively titled "medianvals_by_zip.txt" and "medianvals_by_date.txt" and described at https://github.com/InsightDataScience/find-political-donors.
-
 ### Run instructions
 
 To run find_political_donors.py from the terminal, make X your present working directory, and then type the following into the command line:
@@ -56,6 +46,16 @@ python ./src/find_political_donors.py ./input/itcont.txt ./output/medianvals_by_
 Alternatively, make X your present working directory, and run the shell script "run.sh" by typing the following into the command line:
 
 ./run.sh
+        
+### Input Data
+
+The script find_political_donors.py accepts as input a text file generically titled "itcont.txt" via sys.argv. The input file itcont.txt can be any file found at http://classic.fec.gov/finance/disclosure/ftpdet.shtml#a2017_2018 under "Contributions from Individuals" and pertaining to political campaign contributions between the years 2010 -- 2018. (Use any file beginning with the prefix "itcont" and ending with ".txt".) It is a text file where each line has 21 pipe-delimited fields, described at http://classic.fec.gov/finance/disclosure/metadata/DataDictionaryContributionsbyIndividuals.shtml.
+
+An very small example of the itcont.txt file may be downloaded at https://github.com/InsightDataScience/find-political-donors too.
+
+### Output Data
+
+The script find_political_donors.py ouputs two text files, respectively titled "medianvals_by_zip.txt" and "medianvals_by_date.txt" and described at https://github.com/InsightDataScience/find-political-donors.
 
 ### Required libraries
 
@@ -75,7 +75,7 @@ In this section, we explain how find_political_donors.py works.
 
 ### Global variables
 
-There is really only one global variable in find_political_donors.py, called "stream_dic." It is a dictionary with key, value pairs as follows:
+There is really only one global variable in find_political_donors.py, called "stream_dic". It is a dictionary with key, value pairs as follows:
 
 Keys: The recipients of the political campaign donation. This is given as the first element of each line, as a string split over '|', of the input file itcont.txt.
 
@@ -83,7 +83,7 @@ Values: A list of two sub-dictionaries. The keys of the first dictionary are zip
 
 ### Global functions
 
-**my_round**: The argument is an floating point number. The output is the integer nearest to the argument, with the convention that we round half-integers up to their nearest integer. For example, 2.5 rounds up to 3. This function uses the built-in python function "round," which instead rounds half-integers to their nearest even number. For example, round(2.5) = 2. Because we instead want, for example, 2.5 to round up to 3, we use the function "my_round."
+**my_round**: The argument is an floating point number. The output is the integer nearest to the argument, with the convention that we round half-integers up to their nearest integer. For example, 2.5 rounds up to 3. This function uses the built-in python function "round", which instead rounds half-integers to their nearest even number. For example, round(2.5) = 2. Because we instead want, for example, 2.5 to round up to 3, we use the function "my_round".
 
 **check_zip_code_format**: The argument is a single string. The output is True if the string has length 5 and comprises positive integers, and it is False if otherwise. The purpose of this function is to check that the input string has the format of a zip code. (A better function would simply check that a given string is among the finite list of all U.S. zip codes. We do this in the jupyter notebook included with this repo.)
 
@@ -97,13 +97,13 @@ The following is a step-by-step description of find_political_donors.py (for bre
 
 **2.** Next, find_political_donors.py updates the first subdictionary "stream_dic[cmte_id][0]" by appending transaction_amt to the list "stream_dic[cmte_id][0][zip_code]". It also updates the second subdictionary "stream_dic[cmte_id][1]" by appending transaction_amt to the list "stream_dic[cmte_id][1][transaction_dt]".
 
-**3.** Next, find_political_donors.py writes a new line to the output file medianvals_by_zip.txt. The format and content of this new line is described at https://github.com/InsightDataScience/find-political-donors).
+**3.** Next, find_political_donors.py writes a new line to the output file "medianvals_by_zip.txt". The format and content of this new line is described at https://github.com/InsightDataScience/find-political-donors).
 
-**4.** After completing steps 1-3 for all lines in the input file, find_political_donors.py writes to the output file medianvals_by_date.txt. The format and content of this output is described at https://github.com/InsightDataScience/find-political-donors).
+**4.** After completing steps 1-3 for all lines in the input file, find_political_donors.py writes to the output file "medianvals_by_date.txt". The format and content of this output is described at https://github.com/InsightDataScience/find-political-donors).
 
 # Testing find_political_donors.py
 
-Two tests of find_political_donors.py are included in the directory "insights_testsuite."  To use them, paste insights_testsuite into the directory containing all other files for this project.  If this directory is called "X," then the file tree structure of X is now
+Two tests of find_political_donors.py are included in the directory "insights_testsuite".  To use them, paste insights_testsuite into the directory containing all other files for this project.  If this directory is called "X", then the file tree structure of X is now
 
     X
     ├── input
@@ -127,7 +127,7 @@ Two tests of find_political_donors.py are included in the directory "insights_te
                 └── src
                     └── find_political_donors.py
                     
-In the above, both versions of find_political_donors.py are the same, but both versions of run.sh are not the same. For the latter, the only difference between the two versions is that the second version is altered so find_political_donors.py accepts the file "itcont_2018_20170530_20170830_small.txt" as input.
+In the above, both versions of find_political_donors.py are the same, but both versions of run.sh are not the same. For the latter, the only difference between the two versions is that the version in test_2 is altered so find_political_donors.py accepts the file "itcont_2018_20170530_20170830_small.txt" as input.
 
 To perform the basic Insights test (described at https://github.com/InsightDataScience/find-political-donors) at the command line, change the present working directory to insight_testsuite and enter
 
