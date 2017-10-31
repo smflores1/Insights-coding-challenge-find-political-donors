@@ -85,9 +85,9 @@ Values: A list of two sub-dictionaries. The keys of the first dictionary are zip
 
 **my_round**: The argument is an floating point number. The output is the integer nearest to the argument, with the convention that we round half-integers up to their nearest integer. For example, 2.5 rounds up to 3. This function uses the built-in python function "round," which instead rounds half-integers to their nearest even number. For example, round(2.5) = 2. Because we instead want, for example, 2.5 to round up to 3, we use the function "my_round."
 
-**check_zip_code_format**: The argument is a single string. The output is True if the string has length 5 and comprises positive integers, and it returns False if otherwise. The purpose of this function is to check that the input string has the format of a zip code. (A better function would simply check that a given string is among the finite list of all U.S. zip codes. We do this in the jupyter notebook included with this repo.)
+**check_zip_code_format**: The argument is a single string. The output is True if the string has length 5 and comprises positive integers, and it is False if otherwise. The purpose of this function is to check that the input string has the format of a zip code. (A better function would simply check that a given string is among the finite list of all U.S. zip codes. We do this in the jupyter notebook included with this repo.)
 
-**check_date_format**: The argument is a single string. The output is True if the string is a date of the form MMDDYYYY in the years 2010--2018.
+**check_date_format**: The argument is a single string. The output is True if the string is a date of the form MMDDYYYY in the years 2010--2018 and is False if otherwise.
 
 ### Step-by-step
 
