@@ -79,7 +79,7 @@ There is really only one global variable in find_political_donors.py, called "st
 
 Keys: The recipients of the political campaign donation. This is given as the first element of each line, as a string split over '|', of the input file itcont.txt.
 
-Values: A list of two sub-dictionaries. The keys of the first dictionary are zip codes, given by the 11th element of each line, as a string split over '|', of the input file itcont.txt. Its values are a list of all donation amounts made to date to the corresponding key (recipient) of stream_dic. The keys of the second dictionary are transaction dates, given by the 14th element of each line, as a string split over '|', of the input file itcont.txt. Its values are a list of all donation amounts made to date to the corresponding key (recipient) of stream_dic.
+Values: A list of two sub-dictionaries. The keys of the first dictionary are zip codes, given by the 11th element of each line, as a string split over '|', of the input file itcont.txt. Its values are a list of all donation amounts made to date to the corresponding key (recipient) of stream_dic. The keys of the second dictionary are transaction dates, given by the 14:th element of each line, as a string split over '|', of the input file itcont.txt. Its values are a list of all donation amounts made to date to the corresponding key (recipient) of stream_dic.
 
 ### Global functions
 
@@ -93,7 +93,7 @@ Values: A list of two sub-dictionaries. The keys of the first dictionary are zip
 
 The following is a step-by-step description of find_political_donors.py (for brevity, we leave out some details, such as line-skipping rules, already explained at https://github.com/InsightDataScience/find-political-donors):
 
-**1.** find_political_donors.py reads the input file itcont.txt line by line. At the i:th line, it splits that line into a list of variables across the pipe delimiter '|'. It then identifies the 1st, 11th, 14th, and 16th elements of that list as the recipient id ("cmte_id"), the donor zip code ("zip_code"), the donation date ("transaction_dt"), and the donation amount ("transaction_amt") respectively. 
+**1.** find_political_donors.py reads the input file itcont.txt line by line. At the i:th line, it splits that line into a list of variables across the pipe delimiter '|'. It then identifies the 1:st, 11:th, 14:th, and 15:th elements of that list as the recipient id ("cmte_id"), the donor zip code ("zip_code"), the donation date ("transaction_dt"), and the donation amount ("transaction_amt") respectively. 
 
 **2.** Next, find_political_donors.py updates the first subdictionary stream_dic[cmte_id][0] by appending transaction_amt to the list "stream_dic[cmte_id][0][zip_code]". It also updates the second subdictionary stream_dic[cmte_id][1] by appending transaction_amt to the list "stream_dic[cmte_id][1][transaction_dt]".
 
