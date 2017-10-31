@@ -79,7 +79,7 @@ There is really only one global variable in find_political_donors.py, called "st
 
 Keys: The recipients of the political campaign donation. This is given as the first element of each line, as a string split over '|', of the input file itcont.txt.
 
-Values: A list of two sub-dictionaries. The keys of the first dictionary are zip codes, given by the 11th element of each line, as a string split over '|', of the input file itcont.txt. Its values are a list of all donation amounts to the corresponding key (recipient) of stream_dic. The keys of the second dictionary are transaction dates, given by the 14th element of each line, as a string split over '|', of the input file itcont.txt. Its values are a list of all donation amounts to the corresponding key (recipient) of stream_dic.
+Values: A list of two sub-dictionaries. The keys of the first dictionary are zip codes, given by the 11th element of each line, as a string split over '|', of the input file itcont.txt. Its values are a list of all donation amounts made to date to the corresponding key (recipient) of stream_dic. The keys of the second dictionary are transaction dates, given by the 14th element of each line, as a string split over '|', of the input file itcont.txt. Its values are a list of all donation amounts made to date to the corresponding key (recipient) of stream_dic.
 
 ### Global functions
 
