@@ -95,7 +95,7 @@ The following is a step-by-step description of find_political_donors.py (for bre
 
 **1.** find_political_donors.py reads the input file itcont.txt line by line. At the i:th line, it splits that line into a list of variables across the pipe delimiter '|'. It then identifies the 1st, 11th, 14th, and 16th elements of that list as the recipient id ("cmte_id"), the donor zip code ("zip_code"), the donation date ("transaction_dt"), and the donation amount ("transaction_amt") respectively. 
 
-**2.** Next, find_political_donors.py updates the first subdictionary stream_dic[cmte_id][0] by appending transaction_amt to the list stream_dic[cmte_id][0][zip_code]. It also updates the second subdictionary stream_dic[cmte_id][1] by appending transaction_amt to the list stream_dic[cmte_id][1][transaction_dt].
+**2.** Next, find_political_donors.py updates the first subdictionary stream_dic[cmte_id][0] by appending transaction_amt to the list "stream_dic[cmte_id][0][zip_code]". It also updates the second subdictionary stream_dic[cmte_id][1] by appending transaction_amt to the list "stream_dic[cmte_id][1][transaction_dt]".
 
 **3.** Next, find_political_donors.py writes a new line to the output file medianvals_by_zip.txt. The format and content of this new line is described at https://github.com/InsightDataScience/find-political-donors).
 
