@@ -39,7 +39,7 @@ Create the following file tree structure inside a directory with any name, label
         
 ### Input Data
 
-The script find_political_donors.py accepts as input a text file generically titled "itcont.txt" via sys.argv. The input file itcont.txt can be any file found at http://classic.fec.gov/finance/disclosure/ftpdet.shtml#a2017_2018 under "Contributions from Individuals" and pertaining to political campaign contributions between the years 2010 -- 2018. (Use any file beginning with the prefix "itcont" and ending with .txt.) It is a text file where each line has 21 pipe-delimited fields, described at http://classic.fec.gov/finance/disclosure/metadata/DataDictionaryContributionsbyIndividuals.shtml.
+The script find_political_donors.py accepts as input a text file generically titled "itcont.txt" via sys.argv. The input file itcont.txt can be any file found at http://classic.fec.gov/finance/disclosure/ftpdet.shtml#a2017_2018 under "Contributions from Individuals" and pertaining to political campaign contributions between the years 2010 -- 2018. (Use any file beginning with the prefix "itcont" and ending with ".txt".) It is a text file where each line has 21 pipe-delimited fields, described at http://classic.fec.gov/finance/disclosure/metadata/DataDictionaryContributionsbyIndividuals.shtml.
 
 An very small example of the itcont.txt file may be downloaded at https://github.com/InsightDataScience/find-political-donors too.
 
@@ -53,7 +53,7 @@ To run find_political_donors.py from the terminal, make X your present working d
 
 python ./src/find_political_donors.py ./input/itcont.txt ./output/medianvals_by_zip.txt ./output/medianvals_by_date.txt
 
-Alternatively, make X your present working directory, and run the shell script run.sh by typing the following into the command line:
+Alternatively, make X your present working directory, and run the shell script "run.sh" by typing the following into the command line:
 
 ./run.sh
 
@@ -111,7 +111,7 @@ Two tests of find_political_donors.py are included in the directory "insights_te
     ├── output
     ├── run.sh
     ├── src
-        └── find_political_donors.py
+    |   └── find_political_donors.py
     └── insight_testsuite
         └── run_tests.sh
         └── tests
