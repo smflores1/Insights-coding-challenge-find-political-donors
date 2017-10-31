@@ -121,13 +121,13 @@ Two tests of find_political_donors.py are included in the directory "insights_te
             |   └── output
             └── test_2
                 ├── input
-                │   └── itcont_2018_20170530_20170830_small.txt
+                │   └── itcont.txt
                 ├── output
                 ├── run.sh
                 └── src
                     └── find_political_donors.py
                     
-In the above, both versions of find_political_donors.py are the same, but both versions of run.sh are not the same. For the latter, the only difference between the two versions is that the version in test_2 is altered so find_political_donors.py accepts the file "itcont_2018_20170530_20170830_small.txt" as input.
+In the above, both versions of find_political_donors.py are the same, but both versions of run.sh are not the same. For the latter, the only difference between the two versions is that the version in test_2 is altered so find_political_donors.py accepts the file "itcont_2018_20170530_20170830_small.txt" as input. Aslo, the versions of itcont.txt are not all the same. The versions in X/input and test_1/input are identical, but the version in test_2/input is much larger than the others, about 1.4MB.
 
 To perform the basic Insights test (described at https://github.com/InsightDataScience/find-political-donors) at the command line, change the present working directory to insight_testsuite and enter
 
