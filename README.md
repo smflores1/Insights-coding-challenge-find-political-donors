@@ -34,7 +34,7 @@ Create the following file tree structure inside a directory with any name, label
     │   └── itcont.txt
     ├── output
     ├── run.sh
-    ├── src
+    └── src
         └── find_political_donors.py
         
 ### Input Data
